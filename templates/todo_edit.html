@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% comment %} {% load widget_tweaks %} {% endcomment %}
+
+{% block body %}
+
+<h1>Edit Todo</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="update">
+</form>
+
+{% endblock body %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1 class="col-md-12">Todo List</h1>
+        <div class="col-md-12 row">
+            {% for todo in todos %}
+            <div class="card">
+                <div class="card-header">
+                    {{ todo.title }}
+                </div>
+                <div class="card-body">
+                    <div>{{ todo.deadline }}</div>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{% url 'todo_detail' todo.pk %}" class="btn btn-primary">View</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" class="btn btn-warning">Edit</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>No todos</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
