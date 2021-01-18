@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Delete Todo</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ todo.title }}"?</p>
+    <button class="btn btn-danger" type="submit">Yes</button>
+</form>
+
+{% endblock body %}

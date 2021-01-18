@@ -18,8 +18,8 @@
             <td>{{ todo.deadline|time }}</td>
         </tr>
     </table>
-    <a href="" class="btn btn-warning">Edit</a>
-    <a href="" class="btn btn-danger">Delete</a>
+    <a href="{% url 'todo_edit' todo.pk %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'todo_delete' todo.pk %}" class="btn btn-danger">Delete</a>
 </div>
 
 {% endblock body %}

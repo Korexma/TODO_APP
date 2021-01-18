@@ -7,23 +7,27 @@
         <h1 class="col-md-12">Todo List</h1>
         <div class="col-md-12 row">
             {% for todo in todos %}
-            <div class="card">
-                <div class="card-header">
-                    {{ todo.title }}
-                </div>
-                <div class="card-body">
-                    <div>{{ todo.deadline }}</div>
-                </div>
-                <div class="card-footer text-muted">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="{% url 'todo_detail' todo.pk %}" class="btn btn-primary">View</a>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Title: {{ todo.title }}
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            Deadline: {{ todo.deadline }}
                         </div>
-                        <div class="col-md-4">
-                            <a href="" class="btn btn-warning">Edit</a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="" class="btn btn-danger">Delete</a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="{% url 'todo_detail' todo.pk %}" class="btn btn-primary">View</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="{% url 'todo_edit' todo.pk %}" class="btn btn-warning">Edit</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="{% url 'todo_delete' todo.pk %}" class="btn btn-danger">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>

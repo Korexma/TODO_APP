@@ -1,5 +1,6 @@
 "db.sqlite3" 
 ".vscode" 
 ".vscode/settings.json" 
-" TODO/migrations/0001_initial.py" 
+" TODO/migrations/" 
 ".vscode/" 
+"*.pyc"
